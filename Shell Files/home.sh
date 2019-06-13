@@ -37,11 +37,17 @@ playlist_selection() {
 	ZWW="https://www.youtube.com/watch?v=zckKHLpXi50";
 	ZLA="https://www.youtube.com/watch?v=MiQheR3cD4o";
 
+	# Gorillaz List
+
+	GFG="https://www.youtube.com/watch?v=HyHNuVaZJ-k"
+	GD="https://www.youtube.com/watch?v=uAOR6ib95kQ"
+	GMH="https://www.youtube.com/watch?v=wk8xbWEBwtI"
+
 	# IO
 
 	echo "Choose a soundtrack:"
 	echo
-	echo "0. Go Back"
+	echo "0.  Go Back"
 	echo
 	echo "1.  Final Fantasy I"
 	echo "2.  Final Fantasy II"
@@ -69,7 +75,9 @@ playlist_selection() {
 	echo "24. The Legend of Zelda: Wind Waker"
 	echo "25. The Legend of Zelda: Link's Awakening"
 	echo "26. The Legend of Zelda: Minish Cap"
-	echo
+	echo "27. Gorillaz - Feel Good"
+	echo "28. Gorillaz - DARE"
+	echo "29. Gorillaz - On Melancholy Hill"
 	
 	selecting=1
 	
@@ -89,81 +97,120 @@ playlist_selection() {
 		1) $TZ $FFI
 		break
 		;;
+
 		2) $TZ $FFII
 		break
 		;;
+
 		3) $TZ $FFIII
 		break
 		;;
+
 		4) $TZ $FFIV
 		break
 		;;
+
 		5) $TZ $FFV
 		break
 		;;
+
 		6) $TZ $FFVI
 		break
 		;;
+
 		7) $TZ $FFVII
 		break
 		;;
+
 		8) $TZ $FFVIII
 		break
 		;;
+
 		9) $TZ $FFIX
 		break
 		;;
+
 		10) $TZ $FFX
 		break
 		;;
+
 		11) $TZ $FFXI
 		break
 		;;
+
 		12) $TZ $FFXII
 		break
 		;;
+
 		13) $TZ $FFXIII
 		break
 		;;
+
 		14) $TZ $FFXIV
 		break
 		;;
+
 		15) $TZ $FFXV
 		break
 		;;
+
 		16) $TZ $ZOOT
 		break
 		;;
+
 		17) $TZ $ZMM
 		break
 		;;
+
 		18) $TZ $ZOOA
 		break
 		;;
+
 		19) $TZ $ZOOS
 		break
 		;;
+
 		20) $TZ $ZLTTP
 		break
 		;;
+
 		21) $TZ $ZBOTW
 		break
 		;;
+
 		22) $TZ $ZLBW
 		break
 		;;
+
 		23) $TZ $ZTP
 		break
 		;;
+
 		24) $TZ $ZWW
 		break
 		;;
+
 		25) $TZ $ZLA
 		break
 		;;
+
 		26) $TZ $ZMC
 		break
 		;;
+
+		27) $TZ $GFG
+		break
+		;;
+
+		28) $TZ $GD
+		break
+		;;
+
+		29) $TZ $GMH
+		break
+		;;
+
+
 		*) 
 		echo
 		echo "${REDTEXT}I'm sorry, that's not a valid selection.${NOCOLOR}"
