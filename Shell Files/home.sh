@@ -41,6 +41,8 @@ playlist_selection() {
 
 	echo "Choose a soundtrack:"
 	echo
+	echo "0. Go Back"
+	echo
 	echo "1.  Final Fantasy I"
 	echo "2.  Final Fantasy II"
 	echo "3.  Final Fantasy III"
