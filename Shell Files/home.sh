@@ -80,6 +80,9 @@ playlist_selection() {
 		TZ="tizonia --youtube-audio-stream "
 
 		case "$playlistselection" in
+		
+		0) break
+		;;
 
 		1) $TZ $FFI
 		break
