@@ -1,7 +1,7 @@
 u="$USER"
 
 echo "Copying dot files..."
-cp Dots/.* /home/$u/
+cp ./Dots/.* /home/$u/ -rf
 echo "Dot files copied."
 
 echo ""
