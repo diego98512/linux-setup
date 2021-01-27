@@ -10,7 +10,7 @@ esac
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/snap/bin
 
-export PS1="\[\e[m\] \[\e[35m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\] : \[\e[31m\]\w\[\e[m\]   \e[36m\]"$'\u2192'" \e[m\]"
+export PS1="\[\e[m\] \[\e[35m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\] : \[\e[31m\]\w\[\e[m\]   \e[36m\]"$'\u2192'" \e[m\] "
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
