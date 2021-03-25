@@ -16,3 +16,11 @@ then
 	sudo sed 's#use_fully_qualified_names = True#use_fully_qualified_names = False' /etc/sssd/sssd.conf
 	sudo systemctl restart sssd
 fi
+
+apt update
+apt dist-upgrade -y
+apt install unattended-upgrades -y
+dpkg-reconfigure --priority=low unattended-upgrades
+
+mkdir ~/.ssh && chmod 700 ~/.ssh
+
