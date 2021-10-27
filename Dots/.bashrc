@@ -8,9 +8,9 @@ case $- in
       *) return;;
 esac
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/snap/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/snap/bin:/home/diego/.cargo/bin
 
-export PS1="\[\e[m\] \[\e[35m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\] : \[\e[31m\]\w\[\e[m\]   \e[36m\]"$'\u2192'" \e[m\]"
+export PS1="\[\e[36m\][ \[\e[35m\]\u\[\e[m\]@\[\e[34m\]\h\[\e[m\] : \[\e[31m\]\w\[\e[m\] \e[36m]"$'\u2192'" \e[m\]"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -95,7 +95,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 
@@ -104,10 +103,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
 alias em='emacs -nw'
 alias dd='dd status=progress'
 alias _='sudo'
@@ -136,14 +131,12 @@ fi
 
 # Basic CLI interactions
 
-alias ls='ls -rth --color=auto'
 alias dir='dir --color=auto'
 alias cls='clear'
 alias ..='cd ..'
 
 # Alias management/maintenance
 
-alias list-aliases='grep "alias" ~/.bashrc'
 alias edit-aliases='vim ~/.bashrc'
 
 # Colorise grep command output
@@ -210,10 +203,10 @@ alias yum='sudo yum'
 
 # Updates
 
-alias update='yum update'
-alias updatey='yum -y update'
-alias upgrade='yum upgrade'
-alias upgradey='yum -y upgrade'
+alias update='sudo apt-get update'
+alias updatey='sudo apt-get -y update'
+alias upgrade='sudo apt-get upgrade'
+alias upgradey='sudo apt-get -y upgrade'
 
 # System Info
 
@@ -238,10 +231,77 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 alias wget='wget -c'
 
+#list with exa
+alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias l='exa -lah --color=always --group-directories-first --icons' # tree listing
 
+#youtube-dl
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 
+alias yt='youtube-dl --recode-video mp4'
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
+#Copy/Remove files/dirs
+alias rmd='rm -r'
+alias srm='sudo rm'
+alias srmd='sudo rm -r'
+alias cpd='cp -R'
+alias scp='sudo cp'
+alias scpd='sudo cp -R'
 
+#vim
+alias bashrc='sudo vim ~/.bashrc'
+alias nsddm='sudo vim /etc/sddm.conf'
+alias pconf='sudo vim /etc/pacman.conf'
+alias mkpkg='sudo vim /etc/makepkg.conf'
+alias ngrub='sudo vim /etc/default/grub'
+alias smbconf='sudo vim /etc/samba/smb.conf'
+alias baloorc='sudo vim ~/.config/baloofilerc'
+alias nhefflogout='sudo vim /etc/oblogout.conf'
+alias nmkinitcpio='sudo vim /etc/mkinitcpio.conf'
+alias nmirrorlist='sudo vim /etc/pacman.d/mirrorlist'
+
+#cd/ aliases
+alias home='cd ~'
+alias etc='cd /etc/'
+alias music='cd ~/Music'
+alias vids='cd ~/Videos'
+alias conf='cd ~/.config'
+alias desk='cd ~/Desktop'
+alias pics='cd ~/Pictures'
+alias dldz='cd ~/Downloads'
+alias docs='cd ~/Documents'
+alias linux='cd /mnt/Linux'
+alias sapps='cd /usr/share/applications'
+alias lapps='cd ~/.local/share/applications'
+
+#verify signature for isos
+alias gpgchk='gpg2 --keyserver-options auto-key-retrieve --verify'
+alias gpgfx='gpg2 --keyserver-options auto-key-retrieve --verify'
+
+#receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
+#get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+#shutdown or reboot
+alias sr="sudo reboot"
+alias ssn="sudo shutdown now"
+
+#Load changes to ./bashrc
+alias reload='source ~/.bashrc && neofetch'
 
 
 # Extract archives based on file extension
@@ -295,3 +355,6 @@ function mcd() {
 
 
 ###### ---------------------------------------------------------------------------------------------------------------------- ######
+
+# Created by `pipx` on 2021-10-23 06:43:53
+export PATH="$PATH:/home/diego/.local/bin"
