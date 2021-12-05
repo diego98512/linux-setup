@@ -16,6 +16,20 @@ fi
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 # echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
+export PATH=/home/diego/.cargo/bin:/home/diego/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/diego/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:/opt/unreal-engine/Engine/Binaries/Linux/:/usr/games:/home/diego/.dotnet:/opt/jetbrains/rider/bin
+
+# Plugins
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+# Display welcome message
+clear
+neofetch
+figlet -tkc "Welcome home, Diego!" -w 100 -f future
+echo "\n"
+figlet -tkl "Today is $(date +%A), $(date +%B) $(date +%d), $(date +%Y)." -w 100 -f wideterm
+figlet -tkl "The current time is: $(date +%r)" -w 100 -f wideterm
+echo "\n"
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -98,8 +112,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/autojump/autojump.zsh 2>/dev/null
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /home/diego/.oh-my-zsh/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH=/home/diego/.cargo/bin:/home/diego/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/diego/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin:/opt/unreal-engine/Engine/Binaries/Linux/:/opt/rider/bin
