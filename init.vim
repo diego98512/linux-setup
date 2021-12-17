@@ -21,6 +21,11 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'mhinz/vim-signify' " \
+Plug 'tpope/vim-fugitive' " \
+"							||==> All part of adding in Git integration
+Plug 'tpope/vim-rhubarb' "  /
+Plug 'junegunn/gv.vim' "   /
 
 set encoding=UTF-8
 
@@ -67,3 +72,29 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+:so /home/diego/.config/nvim/plug-config/signify.vim
+
+" Config section for Git integration:
+" Change these if you want
+let g:signify_sign_add               = ''
+let g:signify_sign_delete            = 'ﯰ'
+let g:signify_sign_delete_first_line = ''
+let g:signify_sign_change            = 'ﰣ'
+
+" I find the numbers disctracting
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
+
+
+" Jump though hunks
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
+nmap <leader>gJ 9999<leader>gJ
+nmap <leader>gK 9999<leader>gk
+
+
+" If you like colors instead
+highlight SignifySignAdd    ctermfg=black ctermbg=green  guifg=#000000 guibg=#00ff00
+highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
+highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
