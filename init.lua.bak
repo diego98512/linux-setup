@@ -1,0 +1,27 @@
+vim.bo.number = true
+vim.wo.relativenumber = true
+vim.bo.autoindent = true
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+vim.o.smarttab = true
+vim.bo.softtabstop = 4
+vim.o.mouse = a
+vim.wo.nowrap = true
+
+require('packer').startup(function()
+	use 'tpope/vim-surround'
+	use 'preservim/nerdtree'
+	use 'tpope/vim-commentary'
+	use 'vim-airline/vim-airline'
+	use 'ap/vim-css-color'
+	use 'rafi/awesome-vim-colorschemes'
+	use 'neoclide/coc.nvim'
+	use 'ryanoasis/vim-devicons'
+	use 'tc50cal/vim-terminal'
+	use 'preservim/tagbar'
+	use 'terryma/vim-multiple-cursors'
+	use 'mhinz/vim-signify'
+	use 'tpope/vim-fugitive'
+	use 'tpope/vim-rhubarb'
+	use 'junegunn/gv.vim'	
+end)

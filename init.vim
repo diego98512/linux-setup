@@ -14,6 +14,7 @@ Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'https://github.com/vim-airline/vim-airline-themes' " Status bar themes
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
@@ -21,6 +22,7 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/frazrepo/vim-rainbow' " Adds rainbow brackets
 Plug 'mhinz/vim-signify' " \
 Plug 'tpope/vim-fugitive' " \
 "							||==> All part of adding in Git integration
@@ -39,10 +41,13 @@ nnoremap <F2> caw
 nnoremap <C-Del> daw
 
 nmap <F8> :TagbarToggle<CR>
+nmap <C-S-F5> :Git	push<CR>
+nmap <C-S-F6> :Git commit<CR>
+nmap <C-S-F7> :Git pull<CR>
 
 :set completeopt-=preview " For No Previews
 
-:colorscheme jellybeans
+:colorscheme gruvbox
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -98,3 +103,6 @@ nmap <leader>gK 9999<leader>gk
 highlight SignifySignAdd    ctermfg=black ctermbg=green  guifg=#000000 guibg=#00ff00
 highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
 highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
+
+" Enable rainbow brackets
+let g:rainbow_active = 1
