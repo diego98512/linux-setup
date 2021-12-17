@@ -24,9 +24,9 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/frazrepo/vim-rainbow' " Adds rainbow brackets
 Plug 'mhinz/vim-signify' " \
-Plug 'tpope/vim-fugitive' " \
-"							||==> All part of adding in Git integration
-Plug 'tpope/vim-rhubarb' "  /
+Plug 'tpope/vim-fugitive' "  \
+"							  |==> All part of adding in Git integration
+Plug 'tpope/vim-rhubarb' "   /
 Plug 'junegunn/gv.vim' "   /
 
 set encoding=UTF-8
@@ -41,9 +41,10 @@ nnoremap <F2> caw
 nnoremap <C-Del> daw
 
 nmap <F8> :TagbarToggle<CR>
-nmap <C-S-F5> :Git	push<CR>
-nmap <C-S-F6> :Git commit<CR>
-nmap <C-S-F7> :Git pull<CR>
+noremap <C-S-F5> :Git push<CR>
+noremap <C-S-F6> :Git commit<CR>
+noremap <C-S-F7> :Git pull<CR>
+
 
 :set completeopt-=preview " For No Previews
 
