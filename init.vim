@@ -10,6 +10,10 @@
 
 call plug#begin()
 
+" This is a line with an added comment.
+" This is another line with an added comment.
+" This is also another line with an added comment that will be deleted upon
+" the next commit.
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
