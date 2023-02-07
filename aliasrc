@@ -179,3 +179,11 @@ function mcd() {
 	mkdir $1
 	cd $1
 }
+
+# Youtube-DL MP3
+
+alias ytdlmp3='youtube-dl --audio-format mp3 -x '
+
+# Neofetch custom ASCII
+
+alias neofetch='neofetch --source /home/diego/.config/neofetch/triforce.txt --ascii_colors 3'
