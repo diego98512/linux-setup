@@ -187,3 +187,9 @@ alias ytdlmp3='youtube-dl --audio-format mp3 -x '
 # Neofetch custom ASCII
 
 alias neofetch='neofetch --source /home/diego/.config/neofetch/triforce.txt --ascii_colors 3'
+
+# Cat file directly to clipboard and removes the trailing whitespace
+
+function xc() {
+  cat $1 | tr -d '\n' | xclip -selection clipboard
+}
