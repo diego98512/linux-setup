@@ -1,0 +1,71 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+		color_good = "#a3be8c"
+		color_bad  = "#bf616a"
+		color_degraded = "#ebcb8b"
+        interval = 1
+		separator = "|"
+}
+
+order += "ethernet _first_"
+order += "disk /"
+order += "disk /mnt/deeskWon"
+order += "disk /mnt/deeskToo"
+order += "disk /mnt/deeskTree"
+order += "load"
+order += "memory"
+order += "cpu_usage"
+order += "tztime local"
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+disk "/" {
+        format = "/: %avail free"
+}
+
+disk "/mnt/deeskWon" {
+		format = "dsk1: %avail free"
+}
+
+disk "/mnt/deeskToo" {
+		format = "dsk2: %avail free"
+}
+
+disk "/mnt/deeskTree" {
+		format = "dsk3: %avail free"
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+cpu_usage {
+		format = "CPU: %usage"
+		degraded_threshold = 90
+		max_threshold = 95
+}
+
+tztime local {
+        format = "%d-%m-%Y %H:%M:%S"
+}
