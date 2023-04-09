@@ -97,6 +97,7 @@ alias mv='mv -i'
 alias vim='nvim'
 alias vi='nvim'
 alias nv='nvim'
+alias v='nvim'
 alias snv='sudo nvim'
 alias gds-start='sudo systemctl start openvpn-client@gds'
 alias gds-stop='sudo systemctl stop openvpn-client@gds'
@@ -129,7 +130,7 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias yt='youtube-dl --recode-video mp4'
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
-#cd/ aliases
+# cd/ aliases
 alias home='cd ~'
 alias etc='cd /etc/'
 alias music='cd ~/Music'
@@ -143,10 +144,10 @@ alias linux='cd /mnt/Linux'
 alias sapps='cd /usr/share/applications'
 alias lapps='cd ~/.local/share/applications'
 
-#get the error messages from journalctl
+# Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#shutdown or reboot
+# Shutdown or Reboot
 alias sr="sudo reboot"
 alias ssn="sudo shutdown now"
 
@@ -182,7 +183,7 @@ function mcd() {
 
 # Youtube-DL MP3
 
-alias ytdlmp3='youtube-dl --audio-format mp3 -x '
+alias ytmp3='yt-dlp --audio-format mp3 -x '
 
 # Neofetch custom ASCII
 

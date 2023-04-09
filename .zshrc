@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.cargo.bin:$HOME/bin:/usr/local/bin:/usr/local/lib:/usr/local/lib/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:/usr/local/lib:/usr/local/lib/bin:$PATH
 
 bindkey '^ ' autosuggest-accept
 
@@ -95,7 +95,7 @@ source $HOME/aliasrc
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -118,3 +118,8 @@ source $HOME/aliasrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Use IBus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
